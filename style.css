@@ -466,5 +466,89 @@ h1 {
 
 .action-buttons {
     width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Info Content Section */
+.info-content {
+    width: 100%;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    text-align: left;
+}
+
+.info-content h3 {
+    font-family: var(--font-main);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.info-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--secondary-color);
+    padding-top: 1rem;
+}
+
+.info-item h4 {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.info-item p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+/* Site Footer */
+.site-footer {
+    width: 100%;
+    padding: 2rem;
+    background: var(--bg-ad);
+    text-align: center;
+    border-top: 1px solid var(--border-upload);
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.footer-note {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    line-height: 1.4;
+    opacity: 0.8;
 }
 

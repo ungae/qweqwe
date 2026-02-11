@@ -85,6 +85,7 @@
 
         <!-- Result Section -->
         <section id="result-page">
+            <!-- ... (기존 결과 카드 상단) ... -->
             <div class="result-card">
                 <div class="result-header">
                     <span class="badge" id="result-badge">결과</span>
@@ -127,9 +128,21 @@
                 </div>
             </div>
 
-            <!-- Monetization / Ads -->
-            <div class="ad-banner large">
-                <p>프리미엄 광고 영역</p>
+            <!-- AdSense Info Content Section (New) -->
+            <div class="info-content">
+                <h3>인공지능 관상 분석이란?</h3>
+                <p>본 서비스는 수만 장의 인물 데이터를 학습한 AI 모델을 기반으로 얼굴의 주요 특징점(눈매, 입술 각도, 미간 거리 등)을 분석하여 첫인상을 예측합니다. 전통적인 관상학적 해석과 현대의 이미지 인식 기술을 결합하여 재미있고 유익한 결과를 제공합니다.</p>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>신뢰도 지표</h4>
+                        <p>눈의 가로 길이와 눈동자의 위치를 통해 상대방에게 주는 신뢰감을 측정합니다.</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>호감도 지표</h4>
+                        <p>입꼬리의 각도와 광대의 대칭성을 통해 온화한 인상을 분석합니다.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="action-buttons">
@@ -137,6 +150,17 @@
                 <button class="cta-button outline" onclick="retryTest()">다시 테스트하기</button>
             </div>
         </section>
+
+        <!-- Footer (Essential for AdSense) -->
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="#" onclick="alert('준비 중입니다.')">개인정보처리방침</a>
+                <a href="#" onclick="alert('준비 중입니다.')">이용약관</a>
+                <a href="#" onclick="alert('준비 중입니다.')">쿠키 정책</a>
+            </div>
+            <p class="copyright">&copy; 2026 AI 관상 테스트. All rights reserved.</p>
+            <p class="footer-note">본 서비스는 오락용이며, 과학적 근거보다는 인공지능 학습 데이터에 기반한 결과임을 알려드립니다.</p>
+        </footer>
     </div>
 
     <script src="script.js"></script>
