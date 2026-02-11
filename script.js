@@ -12,8 +12,34 @@ const previewContainer = document.getElementById('preview-container');
 const uploadBox = document.querySelector('.upload-box');
 const analyzeBtn = document.getElementById('analyze-btn');
 const loadingText = document.getElementById('loading-text');
+const themeBtn = document.getElementById('theme-btn');
 
 let uploadedImageSrc = '';
+
+// Theme Handling
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+}
+
+function updateThemeIcon(theme) {
+    const icon = themeBtn.querySelector('i');
+    if (theme === 'dark') {
+        icon.className = 'fas fa-sun';
+    } else {
+        icon.className = 'fas fa-moon';
+    }
+}
 
 // Result Data Database
 const resultTypes = [
@@ -180,3 +206,6 @@ function shareResult() {
         document.body.removeChild(textArea);
     }
 }
+
+// Initialize
+initTheme();

@@ -1,14 +1,33 @@
 :root {
-    --primary-color: #6D5D6E; /* Muted purple/brown for elegance */
-    --secondary-color: #F4EEE0; /* Cream background */
-    --accent-color: #D6A4A4; /* Soft pink accent */
+    /* Light Mode */
+    --primary-color: #6D5D6E;
+    --secondary-color: #F4EEE0;
+    --accent-color: #D6A4A4;
     --text-dark: #393646;
     --text-light: #6D5D6E;
     --white: #FFFFFF;
+    --bg-container: #FFFFFF;
+    --bg-upload-box: #FFFFFF;
+    --bg-ad: #f0f0f0;
+    --border-upload: #ddd;
     --shadow: 0 10px 30px rgba(0,0,0,0.1);
     --border-radius: 20px;
     --font-main: 'Noto Serif KR', serif;
     --font-sans: 'Poppins', sans-serif;
+}
+
+[data-theme="dark"] {
+    --primary-color: #A084E8;
+    --secondary-color: #1A1A1A;
+    --accent-color: #6F61C0;
+    --text-dark: #F5F5F5;
+    --text-light: #B0B0B0;
+    --white: #2D2D2D;
+    --bg-container: #242424;
+    --bg-upload-box: #2D2D2D;
+    --bg-ad: #333333;
+    --border-upload: #444444;
+    --shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 * {
@@ -25,16 +44,42 @@ body {
     justify-content: center;
     min-height: 100vh;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
     width: 100%;
-    max-width: 480px; /* Mobile focused */
-    background: var(--white);
+    max-width: 480px;
+    background: var(--bg-container);
     min-height: 100vh;
     position: relative;
     box-shadow: var(--shadow);
     overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+}
+
+#theme-btn {
+    background: var(--white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
 }
 
 /* Sections */
@@ -48,11 +93,11 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, background-color 0.3s ease;
     opacity: 0;
     pointer-events: none;
     transform: translateX(50px);
-    background: var(--white);
+    background: var(--bg-container);
     overflow-y: auto;
 }
 
@@ -75,7 +120,7 @@ section.active {
 
 .badge {
     background-color: var(--primary-color);
-    color: var(--white);
+    color: #FFFFFF;
     padding: 0.5rem 1rem;
     border-radius: 50px;
     font-size: 0.8rem;
@@ -102,7 +147,7 @@ h1 {
 .hero-image-placeholder {
     width: 200px;
     height: 200px;
-    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    background: var(--white);
     border-radius: 50%;
     margin: 2rem 0;
     display: flex;
@@ -114,7 +159,8 @@ h1 {
 
 .hero-image-placeholder i {
     font-size: 5rem;
-    color: #ddd;
+    color: var(--text-light);
+    opacity: 0.3;
 }
 
 .face-scan-effect {
@@ -150,7 +196,7 @@ h1 {
 
 .cta-button.primary {
     background-color: var(--primary-color);
-    color: var(--white);
+    color: #FFFFFF;
     box-shadow: 0 5px 15px rgba(109, 93, 110, 0.3);
 }
 
@@ -161,7 +207,7 @@ h1 {
 
 .cta-button.secondary {
     background-color: var(--accent-color);
-    color: var(--white);
+    color: #FFFFFF;
 }
 
 .cta-button.outline {
@@ -172,7 +218,8 @@ h1 {
 
 .note {
     font-size: 0.8rem;
-    color: #999;
+    color: var(--text-light);
+    opacity: 0.7;
     margin-top: 1rem;
 }
 
@@ -196,10 +243,11 @@ h1 {
 .nav-bar span {
     font-size: 1.2rem;
     font-weight: 600;
+    color: var(--text-dark);
 }
 
 .upload-box {
-    border: 3px dashed #ddd;
+    border: 3px dashed var(--border-upload);
     border-radius: var(--border-radius);
     padding: 4rem 2rem;
     text-align: center;
@@ -207,24 +255,30 @@ h1 {
     transition: all 0.3s ease;
     margin-bottom: 2rem;
     width: 100%;
+    background: var(--bg-upload-box);
 }
 
 .upload-box:hover {
     border-color: var(--primary-color);
-    background-color: #f9f9f9;
+    background-color: var(--bg-ad);
 }
 
 .upload-box i {
     font-size: 3rem;
-    color: #ccc;
+    color: var(--text-light);
+    opacity: 0.5;
     margin-bottom: 1rem;
+}
+
+.upload-box p {
+    color: var(--text-dark);
 }
 
 .upload-box span.sub-text {
     display: block;
     margin-top: 0.5rem;
     font-size: 0.9rem;
-    color: #aaa;
+    color: var(--text-light);
 }
 
 #preview-container {
@@ -234,7 +288,7 @@ h1 {
     overflow: hidden;
     position: relative;
     box-shadow: var(--shadow);
-    display: none; /* Controlled by JS handles 'hidden' class */
+    display: none;
 }
 
 #preview-container.hidden {
@@ -282,7 +336,7 @@ h1 {
 .scanner {
     width: 80px;
     height: 80px;
-    border: 5px solid #f3f3f3;
+    border: 5px solid var(--white);
     border-top: 5px solid var(--primary-color);
     border-radius: 50%;
     animation: spin 1s linear infinite;
@@ -373,12 +427,13 @@ h1 {
     margin-bottom: 0.3rem;
     font-size: 0.9rem;
     font-weight: 600;
+    color: var(--text-dark);
 }
 
 .progress-bg {
     width: 100%;
     height: 10px;
-    background-color: #eee;
+    background-color: var(--secondary-color);
     border-radius: 5px;
     overflow: hidden;
 }
@@ -387,15 +442,15 @@ h1 {
     height: 100%;
     background-color: var(--accent-color);
     border-radius: 5px;
-    width: 0; /* Animated via JS */
+    width: 0;
     transition: width 1s ease-out;
 }
 
 .ad-banner {
     width: 100%;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    color: #aaa;
+    background-color: var(--bg-ad);
+    border: 1px solid var(--border-upload);
+    color: var(--text-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -412,3 +467,4 @@ h1 {
 .action-buttons {
     width: 100%;
 }
+
