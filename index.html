@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상견례 프리패스상 테스트 | 나의 첫인상은?</title>
+    <meta name="description" content="인공지능이 분석하는 나의 얼굴상 테스트. 나는 상견례 프리패스상일까, 문전박대상일까? 지금 바로 확인해보세요!">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google AdSense Integration (Replace with your actual AdSense ID) -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <div class="container">
+        <!-- Landing Section -->
+        <section id="landing-page" class="active">
+            <div class="header">
+                <span class="badge">AI 얼굴상 분석</span>
+                <h1>상견례<br>프리패스상<br>테스트</h1>
+                <p class="subtitle">인공지능이 분석하는<br>나의 숨겨진 첫인상</p>
+            </div>
+
+            <div class="hero-image-placeholder">
+                <div class="face-scan-effect"></div>
+                <i class="fas fa-user-circle"></i>
+            </div>
+
+            <button class="cta-button primary" onclick="startTest()">테스트 시작하기</button>
+            <p class="note">* 사진은 어디에도 저장되지 않습니다.</p>
+        </section>
+
+        <!-- Upload Section -->
+        <section id="upload-page">
+            <div class="nav-bar">
+                <button class="back-btn" onclick="goBack()"><i class="fas fa-arrow-left"></i></button>
+                <span>사진 업로드</span>
+            </div>
+
+            <div class="upload-container">
+                <div class="upload-box" onclick="triggerUpload()">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>사진을 올려주세요</p>
+                    <span class="sub-text">또는 여기를 클릭하여 촬영</span>
+                </div>
+                <input type="file" id="image-upload" accept="image/*" onchange="handleImageUpload(event)" hidden>
+            </div>
+
+            <div id="preview-container" class="hidden">
+                <img id="image-preview" src="#" alt="Preview">
+                <div class="scan-overlay"></div>
+            </div>
+
+            <button id="analyze-btn" class="cta-button secondary hidden" onclick="startAnalysis()">분석하기</button>
+        </section>
+
+        <!-- Loading Section -->
+        <section id="loading-page">
+            <div class="loader-content">
+                <div class="scanner"></div>
+                <h2>AI가 얼굴을 분석중입니다...</h2>
+                <p id="loading-text">눈매 분석 중...</p>
+            </div>
+            <!-- Ad Placeholder -->
+            <div class="ad-banner">
+                <p>광고 배너 영역</p>
+            </div>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result-page">
+            <div class="result-card">
+                <div class="result-header">
+                    <span class="badge" id="result-badge">결과</span>
+                    <h2 id="result-title">상견례 프리패스상</h2>
+                </div>
+
+                <div class="result-img-container">
+                    <img id="result-user-img" src="#" alt="User Image">
+                    <div class="result-overlay">
+                        <span id="result-score">98%</span>
+                    </div>
+                </div>
+
+                <div class="result-description">
+                    <p id="result-desc">
+                        어머님, 아버님이 보자마자 함박웃음을 지으실 관상입니다.
+                        신뢰감 있는 눈매와 온화한 미소가 특징이네요.
+                    </p>
+                </div>
+
+                <div class="data-bars">
+                    <div class="bar-item">
+                        <span>신뢰도</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span>호감도</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span>카리스마</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 30%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monetization / Ads -->
+            <div class="ad-banner large">
+                <p>프리미엄 광고 영역</p>
+            </div>
+
+            <div class="action-buttons">
+                <button class="cta-button primary" onclick="shareResult()">결과 공유하기</button>
+                <button class="cta-button outline" onclick="retryTest()">다시 테스트하기</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
