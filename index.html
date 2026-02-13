@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상견례 프리패스상 테스트 | AI 인공지능 관상 분석 서비스</title>
-    <meta name="description" content="인공지능(AI) 기술을 활용하여 상견례 프리패스상 여부를 무료로 확인하세요. 전통 관상학 데이터와 현대 이미지 인식 기술을 결합한 고품질 첫인상 분석 서비스를 제공합니다.">
+    <title>상견례 프리패스상 테스트 | AI 인공지능 관상 분석</title>
+    <meta name="description" content="AI 인공지능이 분석하는 나의 첫인상 관상 테스트. 상견례 프리패스상, 면접 프리패스상 등 나의 숨겨진 매력을 확인하세요.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,9 +28,14 @@
 
 <body>
     <div class="container">
-        <!-- Header / Nav -->
+        <!-- Navigation Menu -->
         <header class="top-nav">
-            <div class="logo">AI Face Test</div>
+            <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">AI Face Lab</a></div>
+            <nav class="main-menu">
+                <a href="index.html" class="active">홈</a>
+                <a href="about.html">기술소개</a>
+                <a href="guide.html">분석가이드</a>
+            </nav>
             <div class="theme-toggle-static">
                 <button id="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
             </div>
@@ -40,42 +45,41 @@
             <!-- Landing Section -->
             <section id="landing-page" class="active">
                 <div class="hero-section">
-                    <span class="badge">AI Deep Learning Analysis</span>
+                    <span class="badge">AI Facial Recognition</span>
                     <h1>상견례<br>프리패스상<br>테스트</h1>
-                    <p class="subtitle">인공지능이 분석하는 나의 첫인상과 관상</p>
+                    <p class="subtitle">빅데이터 기반 인공지능의 정교한 관상 분석</p>
                     
                     <div class="hero-image-placeholder">
                         <div class="face-scan-effect"></div>
                         <i class="fas fa-user-tie"></i>
                     </div>
 
-                    <button class="cta-button primary" onclick="startTest()">무료 테스트 시작하기</button>
-                    <p class="note">당신의 사진은 어디에도 저장되지 않으며 안전하게 처리됩니다.</p>
+                    <button class="cta-button primary" onclick="startTest()">지금 분석 시작하기</button>
+                    <p class="note">사진은 서버에 전송되지 않으며 기기 내에서만 처리됩니다.</p>
                 </div>
 
-                <!-- AdSense Strategy: High Quality Text Content -->
+                <!-- AdSense Article Content -->
                 <article class="article-content">
-                    <h2>상견례 프리패스상이란 무엇인가요?</h2>
-                    <p>전통적으로 상견례 프리패스상은 부모님 세대에게 신뢰감과 안정감을 주는 인상을 의미합니다. 이는 단순히 외모의 아름다움을 넘어, 얼굴의 대칭성, 눈매의 선명도, 입꼬리의 각도 등 심리학적으로 호감을 느끼게 하는 요소들이 조화를 이룰 때 나타납니다.</p>
+                    <h2>왜 인공지능 관상 분석인가요?</h2>
+                    <p>전통적인 관상학은 수세기 동안 사람의 얼굴을 통해 성격과 운명을 파악해 왔습니다. 현대의 AI 기술은 이를 수만 명의 인상 데이터와 결합하여 더욱 객관적인 첫인상 지표를 제공합니다.</p>
                     
-                    <h3>AI 기술을 이용한 현대적 관상학</h3>
-                    <p>본 서비스는 수만 장의 데이터를 학습한 합성곱 신경망(CNN) 기술을 활용합니다. 사용자의 얼굴 이미지를 입력받아 주요 특징점(Landmarks) 68개를 추출하고, 이를 기반으로 전통 관상학에서 말하는 '신뢰', '성실', '온화'의 지표를 수치화합니다.</p>
-                    
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <i class="fas fa-eye"></i>
-                            <h4>눈매 분석</h4>
-                            <p>눈동자의 노출 정도와 눈꼬리의 방향을 통해 정직함과 지적인 에너지를 분석합니다.</p>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-smile"></i>
-                            <h4>입술 라인</h4>
-                            <p>미소 지을 때의 입꼬리 대칭성은 사회성과 친화력을 나타내는 주요 지표입니다.</p>
-                        </div>
+                    <div class="feature-box">
+                        <h3>신뢰를 주는 첫인상의 비밀</h3>
+                        <p>첫인상이 결정되는 시간은 단 0.3초입니다. 상견례나 면접과 같은 중요한 자리에서 상대방에게 신뢰감을 주는 얼굴의 특징을 AI가 정밀하게 스캔합니다.</p>
                     </div>
 
-                    <h3>고품질 정보 제공</h3>
-                    <p>우리는 단순히 재미를 넘어, 첫인상이 사회적 관계에서 미치는 영향에 대한 정보를 제공합니다. 첫인상은 0.3초 만에 결정된다는 심리학 이론(초두 효과)에 근거하여, 자신의 인상이 타인에게 어떻게 비춰지는지 객관적인 AI 데이터를 통해 확인해보세요.</p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-microchip"></i>
+                            <h4>딥러닝 모델</h4>
+                            <p>수만 장의 인상 데이터를 학습한 고도화된 모델을 사용합니다.</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>프라이버시</h4>
+                            <p>이미지 데이터는 분석 후 즉시 파기되어 안전합니다.</p>
+                        </div>
+                    </div>
                 </article>
             </section>
 
@@ -87,32 +91,32 @@
                 </div>
                 <div class="upload-container">
                     <div class="upload-box" onclick="triggerUpload()">
-                        <i class="fas fa-camera"></i>
-                        <p>분석할 사진을 선택하세요</p>
-                        <span class="sub-text">정면 사진일수록 정확도가 높습니다.</span>
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>분석할 사진 선택</p>
+                        <span class="sub-text">밝은 곳에서 찍은 정면 사진이 가장 좋습니다.</span>
                     </div>
                     <input type="file" id="image-upload" accept="image/*" onchange="handleImageUpload(event)" hidden>
                 </div>
                 <div id="preview-container" class="hidden">
                     <img id="image-preview" src="#" alt="Preview">
                 </div>
-                <button id="analyze-btn" class="cta-button secondary hidden" onclick="startAnalysis()">지금 분석하기</button>
+                <button id="analyze-btn" class="cta-button secondary hidden" onclick="startAnalysis()">결과 분석하기</button>
             </section>
 
             <!-- Loading Section -->
             <section id="loading-page">
                 <div class="loader-content">
                     <div class="spinner"></div>
-                    <h2>인공지능이 관상을 분석 중입니다...</h2>
-                    <p id="loading-text">얼굴 특징점 추출 중...</p>
+                    <h2>AI가 관상을 정밀 분석 중입니다...</h2>
+                    <p id="loading-text">얼굴 랜드마크 추출 중...</p>
                 </div>
             </section>
 
             <!-- Result Section -->
             <section id="result-page">
                 <div class="result-card">
-                    <span class="badge">AI 분석 결과</span>
-                    <h2 id="result-title">결과 대기 중</h2>
+                    <span class="badge">분석 완료</span>
+                    <h2 id="result-title">결과</h2>
                     <div class="result-img-container">
                         <img id="result-user-img" src="#" alt="User Image">
                     </div>
@@ -121,39 +125,44 @@
                     </div>
                     <div class="data-bars">
                         <div class="bar-item">
-                            <span>신뢰도</span>
-                            <div class="progress-bg">
-                                <div class="progress-fill" style="width: 0%"></div>
-                            </div>
+                            <span>신뢰도 (Trust)</span>
+                            <div class="progress-bg"><div class="progress-fill"></div></div>
                         </div>
                         <div class="bar-item">
-                            <span>호감도</span>
-                            <div class="progress-bg">
-                                <div class="progress-fill" style="width: 0%"></div>
-                            </div>
+                            <span>호감도 (Likeability)</span>
+                            <div class="progress-bg"><div class="progress-fill"></div></div>
                         </div>
                         <div class="bar-item">
-                            <span>카리스마</span>
-                            <div class="progress-bg">
-                                <div class="progress-fill" style="width: 0%"></div>
-                            </div>
+                            <span>카리스마 (Charisma)</span>
+                            <div class="progress-bg"><div class="progress-fill"></div></div>
                         </div>
                     </div>
                 </div>
                 <div class="action-buttons">
                     <button class="cta-button primary" onclick="shareResult()">결과 공유하기</button>
-                    <button class="cta-button outline" onclick="retryTest()">다른 사진으로 테스트</button>
+                    <button class="cta-button outline" onclick="retryTest()">다시 테스트하기</button>
                 </div>
             </section>
         </main>
 
         <footer class="site-footer">
-            <nav class="footer-nav">
-                <a href="privacy.html">개인정보처리방침</a>
-                <a href="privacy.html">이용약관</a>
-            </nav>
-            <p class="copyright">&copy; 2026 AI 관상 연구소. All rights reserved.</p>
-            <p class="footer-note">본 웹사이트는 구글 애드센스 정책을 준수하며, 사용자에게 유익한 인상 분석 정보를 제공합니다.</p>
+            <div class="footer-sections">
+                <div class="f-sec">
+                    <h4>메뉴</h4>
+                    <a href="index.html">홈</a>
+                    <a href="about.html">기술소개</a>
+                    <a href="guide.html">분석가이드</a>
+                </div>
+                <div class="f-sec">
+                    <h4>고객지원</h4>
+                    <a href="privacy.html">개인정보처리방침</a>
+                    <a href="privacy.html">이용약관</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 AI Face Lab. All rights reserved.</p>
+                <p class="footer-note">본 서비스는 오락 및 정보 제공을 목적으로 하며, 인공지능 학습 데이터를 기반으로 한 주관적인 분석 결과를 제공합니다.</p>
+            </div>
         </footer>
     </div>
     <script src="script.js"></script>

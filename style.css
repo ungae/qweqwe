@@ -65,19 +65,44 @@ body {
 
 /* Nav */
 .top-nav { 
-    padding: 1.2rem 2rem; 
+    padding: 1rem 1.5rem; 
     display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+    flex-direction: column;
+    align-items: center;
     border-bottom: 1px solid var(--border-upload); 
     background: var(--bg-container);
+    gap: 0.8rem;
 }
-.logo { font-weight: 700; color: var(--primary-color); font-size: 1.1rem; }
+.logo { font-weight: 700; color: var(--primary-color); font-size: 1.4rem; font-family: var(--font-main); }
+
+.main-menu {
+    display: flex;
+    gap: 1.2rem;
+}
+.main-menu a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    transition: 0.3s;
+}
+.main-menu a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.theme-toggle-static {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
 #theme-btn { 
     background: var(--bg-ad); 
     border: none; 
-    width: 40px; 
-    height: 40px; 
+    width: 36px; 
+    height: 36px; 
     border-radius: 50%; 
     display: flex; 
     align-items: center; 
@@ -110,15 +135,24 @@ h1 { font-family: var(--font-main); font-size: 2.4rem; line-height: 1.2; color: 
 .face-scan-effect { position: absolute; width: 100%; height: 3px; background: var(--accent-color); top: 0; animation: scan 2s infinite ease-in-out; }
 @keyframes scan { 0% { top: 0%; opacity: 0; } 50% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
 
-/* Article/Info Content */
+.note { font-size: 0.85rem; color: var(--text-light); opacity: 0.8; margin-bottom: 1rem; text-align: center; }
+
+/* Article Content */
 .article-content { text-align: left; padding: 1.5rem; background: var(--bg-ad); border-radius: var(--border-radius); margin-top: 1rem; }
+.article-content h1 { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 1.2rem; }
 .article-content h2 { font-family: var(--font-main); font-size: 1.4rem; color: var(--primary-color); margin-bottom: 1rem; }
-.article-content h3 { font-size: 1.1rem; margin: 1.2rem 0 0.6rem; color: var(--text-dark); }
-.article-content p { font-size: 0.9rem; line-height: 1.6; color: var(--text-dark); margin-bottom: 0.8rem; }
+.article-content h3 { font-size: 1.1rem; margin: 1.2rem 0 0.6rem; color: var(--text-dark); border-left: 4px solid var(--accent-color); padding-left: 0.8rem; }
+.article-content p { font-size: 0.95rem; line-height: 1.7; color: var(--text-dark); margin-bottom: 1rem; }
+
+.feature-box { padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-upload); margin: 1.5rem 0; }
+.feature-box h3, .feature-box h4 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--primary-color); }
+
+.guide-item { margin-bottom: 2rem; }
+.guide-item h3 { border-left: none; padding-left: 0; color: var(--accent-color); font-size: 1.2rem; }
 
 .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 1rem 0; }
-.info-item { background: var(--white); padding: 1rem; border-radius: 12px; }
-.info-item i { color: var(--accent-color); margin-bottom: 0.4rem; font-size: 1.1rem; display: block; }
+.info-item { background: var(--white); padding: 1rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+.info-item i { color: var(--accent-color); margin-bottom: 0.4rem; font-size: 1.2rem; display: block; }
 .info-item h4 { font-size: 0.9rem; margin-bottom: 0.3rem; color: var(--primary-color); }
 .info-item p { font-size: 0.8rem; color: var(--text-light); line-height: 1.4; }
 
@@ -135,6 +169,7 @@ h1 { font-family: var(--font-main); font-size: 2.4rem; line-height: 1.2; color: 
     margin-bottom: 0.8rem; 
     font-family: var(--font-sans);
     display: block;
+    text-align: center;
 }
 .cta-button.primary { background: var(--primary-color); color: white; box-shadow: 0 4px 12px rgba(92, 75, 153, 0.2); }
 .cta-button.secondary { background: var(--accent-color); color: white; }
@@ -155,7 +190,6 @@ h1 { font-family: var(--font-main); font-size: 2.4rem; line-height: 1.2; color: 
     width: 100%;
 }
 .upload-box i { font-size: 3.5rem; color: var(--text-light); opacity: 0.4; margin-bottom: 1rem; display: block; }
-.upload-box p { font-weight: 600; margin-bottom: 0.5rem; }
 
 #preview-container { width: 100%; margin: 1.5rem 0; border-radius: var(--border-radius); overflow: hidden; }
 #image-preview { width: 100%; display: block; border-radius: var(--border-radius); }
@@ -169,17 +203,20 @@ h1 { font-family: var(--font-main); font-size: 2.4rem; line-height: 1.2; color: 
 .result-img-container { width: 150px; height: 150px; border-radius: 50%; margin: 1rem auto; overflow: hidden; border: 4px solid var(--bg-ad); }
 #result-user-img { width: 100%; height: 100%; object-fit: cover; }
 #result-title { font-family: var(--font-main); font-size: 2rem; color: var(--primary-color); margin-bottom: 0.8rem; }
-.result-description { font-size: 0.95rem; line-height: 1.5; color: var(--text-dark); margin-bottom: 1.5rem; }
 
-.bar-item { margin-bottom: 1rem; text-align: left; }
+.data-bars { text-align: left; margin-top: 1.5rem; }
+.bar-item { margin-bottom: 1rem; }
 .bar-item span { font-size: 0.9rem; font-weight: 600; display: block; margin-bottom: 0.4rem; }
 .progress-bg { height: 10px; background: var(--bg-ad); border-radius: 5px; overflow: hidden; }
 .progress-fill { height: 100%; background: var(--accent-color); width: 0; transition: width 1s ease-out; }
 
 /* Footer */
 .site-footer { padding: 2.5rem 2rem; text-align: center; border-top: 1px solid var(--border-upload); background: var(--white); margin-top: auto; }
-.footer-nav { margin-bottom: 1.2rem; }
-.footer-nav a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; margin: 0 0.8rem; font-weight: 600; }
+.footer-sections { display: flex; justify-content: space-around; text-align: left; margin-bottom: 2rem; }
+.f-sec h4 { font-size: 0.95rem; margin-bottom: 1rem; color: var(--primary-color); }
+.f-sec a { display: block; color: var(--text-light); text-decoration: none; font-size: 0.85rem; margin-bottom: 0.5rem; }
+
+.footer-bottom { border-top: 1px solid var(--bg-ad); padding-top: 1.5rem; }
 .copyright { font-size: 0.85rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
 .footer-note { font-size: 0.75rem; color: var(--text-light); line-height: 1.4; }
 
