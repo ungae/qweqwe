@@ -177,34 +177,62 @@ function showResult() {
     }, 300);
 }
 
-function shareResult() {
+function shareKakao() {
     const resultTitle = document.getElementById('result-title').textContent;
-    const shareText = `[AI 관상 분석] 나의 첫인상 결과는 '${resultTitle}'입니다. 😮\n상견례/면접 프리패스상인지 확인해보세요! 👇`;
     const shareUrl = window.location.href;
 
-    if (navigator.share) {
-        navigator.share({
-            title: '상견례 프리패스상 테스트',
-            text: shareText,
-            url: shareUrl
-        }).then(() => {
-            console.log('Thanks for sharing!');
-        }).catch(console.error);
-    } else {
-        // Fallback: Copy to clipboard
-        const textArea = document.createElement('textarea');
-        textArea.value = `${shareText} \n${shareUrl}`;
-        document.body.appendChild(textArea);
-        textArea.select();
-        try {
-            document.execCommand('copy');
-            alert('결과가 클립보드에 복사되었습니다! 친구들에게 공유해보세요.');
-        } catch (err) {
-            console.error('Fallback: Oops, unable to copy', err);
-            alert('공유하기를 실패했습니다. URL을 직접 복사해주세요.');
+    if (window.Kakao) {
+        if (!Kakao.isInitialized()) {
+            Kakao.init('YOUR_KAKAO_APP_KEY'); // 실제 키로 교체 필요
         }
-        document.body.removeChild(textArea);
+        
+        Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: `[AI 관상] 나의 결과는? '${resultTitle}'`,
+                description: '상견례/면접 프리패스상인지 지금 바로 확인해보세요!',
+                imageUrl: 'https://qweqwe-35k.pages.dev/og-image.png',
+                link: {
+                    mobileWebUrl: shareUrl,
+                    webUrl: shareUrl,
+                },
+            },
+            buttons: [
+                {
+                    title: '테스트 하기',
+                    link: {
+                        mobileWebUrl: shareUrl,
+                        webUrl: shareUrl,
+                    },
+                },
+            ],
+        });
     }
+}
+
+function shareTwitter() {
+    const resultTitle = document.getElementById('result-title').textContent;
+    const text = `[AI 관상 테스트] 나의 첫인상 결과는 '${resultTitle}'입니다! 😮\n지금 바로 확인해보세요 👇\n`;
+    const url = window.location.href;
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`);
+}
+
+function shareFacebook() {
+    const url = window.location.href;
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
+}
+
+function copyLink() {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+        alert('링크가 클립보드에 복사되었습니다!');
+    }).catch(err => {
+        console.error('복사 실패:', err);
+    });
+}
+
+function shareResult() {
+    // 기존 함수 유지 또는 삭제
 }
 
 // Initialize

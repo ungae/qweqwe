@@ -99,6 +99,13 @@
       gtag('js', new Date());
       gtag('config', 'G-6DLZ8HZPR5');
     </script>
+    <!-- Kakao SDK -->
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js" integrity="sha384-mXVrIXY6/m06z2m3J3hg6SMMSRLN/S7oXVGUPN/+nuS8S/W08S/MZ9B7B0T2xQ7" crossorigin="anonymous"></script>
+    <script>
+      if (!Kakao.isInitialized()) {
+        Kakao.init('YOUR_KAKAO_APP_KEY'); // Note: Replace with actual key later or use dummy for now
+      }
+    </script>
 </head>
 
 <body>
@@ -250,7 +257,14 @@
                     </div>
                 </div>
                 <div class="action-buttons">
-                    <button class="cta-button primary" onclick="shareResult()">결과 공유하기</button>
+                    <button class="cta-button kakao" onclick="shareKakao()">
+                        <i class="fas fa-comment"></i> 카카오톡 공유하기
+                    </button>
+                    <div class="sns-group">
+                        <button class="sns-btn twitter" onclick="shareTwitter()"><i class="fab fa-twitter"></i></button>
+                        <button class="sns-btn facebook" onclick="shareFacebook()"><i class="fab fa-facebook-f"></i></button>
+                        <button class="sns-btn link" onclick="copyLink()"><i class="fas fa-link"></i></button>
+                    </div>
                     <button class="cta-button outline" onclick="retryTest()">다시 테스트하기</button>
                 </div>
             </section>
