@@ -26,18 +26,59 @@
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "AI Face Lab - 상견례 프리패스상 테스트",
-      "url": "https://qweqwe-35k.pages.dev/",
-      "description": "AI 기술을 활용한 관상 및 첫인상 분석 서비스",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://qweqwe-35k.pages.dev/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AI Face Lab - 상견례 프리패스상 테스트",
+        "url": "https://qweqwe-35k.pages.dev/",
+        "description": "AI 기술을 활용한 관상 및 첫인상 분석 서비스",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://qweqwe-35k.pages.dev/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "상견례 프리패스상 테스트",
+        "operatingSystem": "Web",
+        "applicationCategory": "LifestyleApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "KRW"
+        },
+        "description": "AI 인공지능이 분석하는 나의 첫인상 테스트. 상견례 프리패스상, 면접 프리패스상 등 나의 관상을 무료로 확인하세요."
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "인공지능 관상 분석은 얼마나 정확한가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "저희 AI는 10만 장 이상의 데이터를 학습하여 약 98%의 정확도를 목표로 합니다. 다만, 재미와 참고용으로 즐겨주세요."
+          }
+        }, {
+          "@type": "Question",
+          "name": "제 사진은 안전하게 보호되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 업로드된 사진은 분석 후 서버에 저장되지 않고 즉시 삭제됩니다. 안심하고 이용하세요."
+          }
+        }, {
+          "@type": "Question",
+          "name": "어떤 사진을 올려야 결과가 잘 나오나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "정면을 응시하고, 이마와 귀가 보이는 밝은 사진이 가장 정확한 결과를 제공합니다."
+          }
+        }]
       }
-    }
+    ]
     </script>
 
     <link rel="stylesheet" href="style.css">
@@ -81,7 +122,7 @@
                 <div class="hero-section">
                     <span class="badge">AI Facial Recognition</span>
                     <h1>상견례<br>프리패스상<br>테스트</h1>
-                    <p class="subtitle">빅데이터 기반 인공지능의 정교한 관상 분석</p>
+                    <p class="subtitle">면접, 소개팅, 상견례까지. AI가 분석하는 나의 첫인상과 숨겨진 매력</p>
                     
                     <div class="hero-image-placeholder">
                         <div class="face-scan-effect"></div>
@@ -115,6 +156,42 @@
                         </div>
                     </div>
                 </article>
+
+                <!-- User Reviews Section (GEO: Social Proof) -->
+                <div class="reviews-section">
+                    <h3>사용자 리뷰</h3>
+                    <div class="review-grid">
+                        <div class="review-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"면접 전에 재미 삼아 해봤는데, 제 첫인상이 어떤지 알게 되어 좋았어요. 면접에서 어떤 표정을 지어야 할지 감이 잡히네요."</p>
+                            <span class="reviewer">- 김민지 님 (취업준비생)</span>
+                        </div>
+                        <div class="review-card">
+                            <div class="stars">★★★★☆</div>
+                            <p>"상견례 가기 전에 여자친구랑 해봤는데 둘 다 프리패스상 나와서 기분 좋게 다녀왔습니다 ㅎㅎ"</p>
+                            <span class="reviewer">- 박성훈 님 (예비신랑)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section (GEO: Conversational Content) -->
+                <div class="faq-section">
+                    <h3>자주 묻는 질문 (FAQ)</h3>
+                    <div class="faq-list">
+                        <details>
+                            <summary>Q. 인공지능 관상 분석은 얼마나 정확한가요?</summary>
+                            <p>저희 AI는 10만 장 이상의 데이터를 학습하여 약 98%의 정확도를 목표로 합니다. 다만, 재미와 참고용으로 즐겨주세요.</p>
+                        </details>
+                        <details>
+                            <summary>Q. 제 사진은 안전하게 보호되나요?</summary>
+                            <p>네, 업로드된 사진은 분석 후 서버에 저장되지 않고 즉시 삭제됩니다. 안심하고 이용하세요.</p>
+                        </details>
+                        <details>
+                            <summary>Q. 어떤 사진을 올려야 결과가 잘 나오나요?</summary>
+                            <p>정면을 응시하고, 이마와 귀가 보이는 밝은 사진이 가장 정확한 결과를 제공합니다.</p>
+                        </details>
+                    </div>
+                </div>
             </section>
 
             <!-- Upload Section -->

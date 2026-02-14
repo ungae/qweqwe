@@ -179,7 +179,7 @@ function showResult() {
 
 function shareResult() {
     const resultTitle = document.getElementById('result-title').textContent;
-    const shareText = `나의 얼굴상 테스트 결과는: [${resultTitle}] 입니다! \n당신도 지금 바로 확인해보세요.`;
+    const shareText = `[AI 관상 분석] 나의 첫인상 결과는 '${resultTitle}'입니다. 😮\n상견례/면접 프리패스상인지 확인해보세요! 👇`;
     const shareUrl = window.location.href;
 
     if (navigator.share) {
